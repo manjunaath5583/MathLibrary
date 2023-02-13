@@ -33,3 +33,5 @@
 
 # Custom
 tests
+*.json
+.vscode
