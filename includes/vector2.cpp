@@ -27,12 +27,6 @@ Vector2 Vector2::operator+(const Vector2 &other)
 */
 Vector2 Vector2::operator-(const Vector2 &other)
 {
-    Vector2 resultVector;
-
-    resultVector.X_COMPONENT = X_COMPONENT - other.X_COMPONENT; // Subracts X components
-    resultVector.Y_COMPONENT = Y_COMPONENT - other.Y_COMPONENT; // Subracts Y components
-
-    return resultVector;
 }
 
 /*
@@ -52,6 +46,16 @@ double Vector2::operator*(const Vector2 &other)
     return resultDotProduct;
 }
 
+/*
+    SCALAR MULTIPLICATION
+    a = xi+yj
+    k - scalar quantity
+    k*a = kxi + kyj
+*/
+Vector2 Vector2::operator*(const double &scalar)
+{
+    return Vector2(X_COMPONENT * scalar, Y_COMPONENT * scalar);
+}
 /*
     DIVISON OF VECTORS (SCALAR)
 
@@ -130,7 +134,6 @@ double Vector2::magnitudeOfVector()
 */
 Vector2 Vector2::unitVector()
 {
-    this->MAGNITUDE = magnitudeOfVector();
     Vector2 unitVector = *this / this->MAGNITUDE;
     return unitVector;
 }
@@ -166,4 +169,14 @@ double Vector2::directionOfVector()
 double angleBwVectors(Vector2 vector1, Vector2 vector2)
 {
     return acos((vector1 * vector2) / (vector1.MAGNITUDE * vector2.MAGNITUDE));
+}
+
+/*
+    ANGLE TO VECTOR
+    thetha(in radians)
+    vector = cos(thetha)i + sin(thetha)j
+*/
+Vector2 toVector(double Radians)
+{
+    return Vector2(cos(Radians), sin(Radians));
 }

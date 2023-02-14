@@ -7,7 +7,6 @@
 
 class Vector2
 {
-
 public:
     /*
     vector = xi+yj
@@ -36,6 +35,7 @@ public:
     bool operator==(const Vector2 &other) const; // Checks Equality
     bool operator!=(const Vector2 &other) const; // Checks for InEquality
     double operator*(const Vector2 &other);      // Multiplication
+    Vector2 operator*(const double &scalar);     // scalar Multiplication
 
     // Custom functions
     Vector2 zeroVector();       // Converts into null/zero vector
@@ -51,3 +51,4 @@ public:
 std::ostream &operator<<(std::ostream &stream, const Vector2 &other); // Printing Vectors2
 double distanceBwVectors(Vector2 vector1, Vector2 vector2);           // Calculates distance b/w 2 Vectors
 double angleBwVectors(Vector2 vector1, Vector2 vector2);              // Angle between vectors in radians
+Vector2 toVector(double Radians);                                     // Converts radians inton vectors
