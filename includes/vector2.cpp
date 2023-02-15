@@ -27,6 +27,12 @@ Vector2 Vector2::operator+(const Vector2 &other)
 */
 Vector2 Vector2::operator-(const Vector2 &other)
 {
+    Vector2 resultVector;
+
+    resultVector.X_COMPONENT = X_COMPONENT - other.X_COMPONENT; // Adds X components
+    resultVector.Y_COMPONENT = Y_COMPONENT - other.Y_COMPONENT; // Adds Y components
+
+    return resultVector;
 }
 
 /*
@@ -103,6 +109,7 @@ bool Vector2::operator!=(const Vector2 &other) const
 std::ostream &operator<<(std::ostream &stream, const Vector2 &other)
 {
     stream << "(" << other.X_COMPONENT << "," << other.Y_COMPONENT << ")";
+    return stream;
 }
 
 /*

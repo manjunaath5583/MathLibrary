@@ -44,8 +44,7 @@ public:
     double directionOfVector(); // Gives direcction of vector
 
     // Friend Functions
-    friend std::ostream &
-    operator<<(std::ostream &stream, const Vector2 &other);
+    friend std::ostream &operator<<(std::ostream &stream, const Vector2 &other);
 };
 
 std::ostream &operator<<(std::ostream &stream, const Vector2 &other); // Printing Vectors2
